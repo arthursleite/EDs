@@ -12,7 +12,7 @@ int main()
     double nota2;
 
     arquivoIn = fopen("../DadosEntrada.csv", "r");
-    arquivoOut = fopen("../SituacaoFinal.cvs", "w");
+    arquivoOut = fopen("../SituacaoFinal.csv", "w");
     if (arquivoIn == NULL || arquivoOut == NULL)
     {
         printf("Erro ao abrir o arquivo.\n");
