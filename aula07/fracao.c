@@ -12,17 +12,6 @@ Fracao criarFracao(int numerador, int denominador)
     return f;
 }
 
-int mdc(int a, int b)
-{
-    while (b != 0)
-    {
-        int temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
 // Forma de utilização
 // Fracao x = simplificarFracao(criarFracao(3, 9));
 
@@ -73,9 +62,21 @@ Fracao inverterFracao(Fracao f)
     f.denominador = temp;
     return f;
 }
+
 Fracao dividirFracao(Fracao f1, Fracao f2)
 {
     Fracao fresult = multiplicarFracao(f1, inverterFracao(f2));
     fresult = simplificarFracao(fresult);
     return fresult;
+}
+
+int mdc(int a, int b)
+{
+    while (b != 0)
+    {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
 }
