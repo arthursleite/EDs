@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 #define ERRO -1
 #define SIM 1
@@ -63,7 +64,7 @@ Item *criarItem(int x)
 
 // Inserir elemento na pilha
 
-void empilhar(Pilha *p, int chave)
+void push(Pilha *p, int chave)
 {
     Item *novoItem = criarItem(chave);
     novoItem->proximo = p->topo;
@@ -73,11 +74,11 @@ void empilhar(Pilha *p, int chave)
 
 // Retirar elemento da pilha
 
-int desempilhar(Pilha *p)
+int pop(Pilha *p)
 {
-    if(estaVazia(p) == SIM)
+    if (estaVazia(p))
     {
-        printf("Erro: a pilha está vazia.\n");
+        printf("Erro: a pilha está vazia, não é possível desempilhar.\n");
         return (ERRO);
     }
     Item *temp = p->topo;
@@ -88,13 +89,25 @@ int desempilhar(Pilha *p)
     return chave;
 }
 
+// Retorna a chave do item que está no topo da pilha
+
+int topo(Pilha *p)
+{
+    if (estaVazia(p))
+    {
+        printf("Erro: Pilha vazia, não há elementos para visualizar.\n");
+        exit(EXIT_FAILURE);
+    }
+    return p->topo->chave;
+}
+
 // Destruindo a pilha
 
 void liberarPilha(Pilha *p)
 {
     while (!estaVazia(p))
     {
-        desempilhar(p);
+        pop(p);
     }
     free(p);
 }
@@ -104,11 +117,13 @@ void liberarPilha(Pilha *p)
 int main()
 {
     Pilha *p = criarPilha();
-    empilhar(p, 10);
-    empilhar(p, 20);
-    empilhar(p, 30);
-    empilhar(p, 40);
-    printf("Desempilhando...\n");
+    push(p, 10);
+    push(p, 20);
+    push(p, 30);
+    push(p, 40);
+
+    printf("Topo da pilha: %d\n", topo(p));
+    printf("Desempilhando: \n");
     while (!estaVazia(p))
     {
         printf("Chave: %d\n", desempilhar(p));
