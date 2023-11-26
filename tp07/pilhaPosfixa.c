@@ -32,7 +32,7 @@ double desempilhar(Pilha *p) {
     return p->itens[(p->topo)--];
 }
 
-double avaliarPosfixa(char expressao[]) {
+double calcularPosfixa(char expressao[]) {
     Pilha pilha;
     inicializar(&pilha);
 

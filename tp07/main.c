@@ -7,7 +7,7 @@
 
 int main() {
     char expressao[] = "45 60 + 30 c *"; 
-    double resultado = avaliarPosfixa(expressao);
+    double resultado = calcularPosfixa(expressao);
     printf("Resultado: %.2lf\n", resultado);
 
     return 0;

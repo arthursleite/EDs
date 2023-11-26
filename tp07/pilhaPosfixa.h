@@ -1,5 +1,5 @@
-#ifndef PILHA_H
-#define PILHA_H
+#ifndef PILHAPOSFIXA_H
+#define PILHAPOSFIXA_H
 
 #define TAMANHO_MAX 100
 
@@ -13,6 +13,6 @@ int estaVazia(Pilha *p);
 int estaCheia(Pilha *p);
 void empilhar(Pilha *p, double valor);
 double desempilhar(Pilha *p);
-double avaliarPosfixa(char expressao[]);
+double calcularPosfixa(char expressao[]);
 
 #endif
