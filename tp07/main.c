@@ -2,13 +2,21 @@
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
+#include <string.h>
 #include "pilhaPosfixa.h"
 #include "pilhaPosfixa.c"
 
 int main() {
-    char expressao[] = "45 60 + 30 c *"; 
-    double resultado = calcularPosfixa(expressao);
+    char expressaoPosfixa[] = "9 5 2 8 * 4 + * +";
+    char expressaoInfixa[100];
+
+    double resultado = calcularPosfixa(expressaoPosfixa);
     printf("Resultado: %.2lf\n", resultado);
+
+    converterPosfixaParaInfixa(expressaoPosfixa, expressaoInfixa);
+    printf("Expressão Infixa: %s\n", expressaoInfixa);
+
+
 
     return 0;
 }
