@@ -6,7 +6,7 @@
 #include "pilhaPosfixa.c"
 
 int main() {
-    char expressao[] = "45 60 + 30 c *"; 
+    char expressao[] = "3 4 + 5 t *"; 
     double resultado = calcularPosfixa(expressao);
     printf("Resultado: %.2lf\n", resultado);
 

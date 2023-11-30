@@ -78,7 +78,7 @@ double calcularPosfixa(char expressao[]) {
                     break;
                 case '^':
                     operando1 = desempilhar(&pilha);
-                    resultado = pow(operando1, operando2);
+                    resultado = pow(operando2, operando1);
                     break;
                 case 'l': // log
                     resultado = log10(operando2);
