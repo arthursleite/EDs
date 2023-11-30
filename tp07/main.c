@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <ctype.h>
+#include <string.h>
 #include "pilhaPosfixa.h"
 #include "pilhaPosfixa.c"
 

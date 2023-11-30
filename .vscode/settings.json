@@ -2,5 +2,7 @@
     "C_Cpp.default.compilerPath": "c:\\MinGW\\bin\\gcc.exe",
     "files.associations": {
         "stdio.h": "c"
-    }
+    },
+    "c-cpp-compile-run.c-compiler": "C:\\MinGW\\bin\\gcc.exe",
+    "c-cpp-compile-run.cpp-compiler": "C:\\MinGW\\bin\\gcc.exe"
 }
